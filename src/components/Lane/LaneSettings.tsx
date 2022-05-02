@@ -36,6 +36,25 @@ export function LaneSettings({ lane, lanePath }: LaneSettingsProps) {
           }`}
         />
       </div>
+      {/* Show Lane Count Toggle */}
+      <div className={c('checkbox-wrapper')}>
+        <div className={c('checkbox-label')}>
+          {t('Show Item Count')}
+        </div>
+        <div
+          onClick={() =>
+            boardModifiers.updateLane(
+              lanePath,
+              update(lane, {
+                data: { $toggle: ['showLaneCount'] },
+              })
+            )
+          }
+          className={`checkbox-container ${
+            lane.data.showLaneCount ? 'is-enabled' : ''
+          }`}
+        />
+      </div>
     </div>
   );
 }

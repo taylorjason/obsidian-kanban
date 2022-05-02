@@ -17,6 +17,7 @@ export function LaneForm({
 }) {
   const { boardModifiers, stateManager } = React.useContext(KanbanContext);
   const [shouldMarkAsComplete, setShouldMarkAsComplete] = React.useState(false);
+  const [shouldShowLaneCount, setShouldShowLaneCount] = React.useState(true);
   const [laneTitle, setLaneTitle] = React.useState('');
 
   const inputRef = React.useRef<HTMLTextAreaElement>();
@@ -41,11 +42,13 @@ export function LaneForm({
       data: {
         title: laneTitle,
         shouldMarkItemsComplete: shouldMarkAsComplete,
+        showLaneCount: shouldShowLaneCount
       },
     });
 
     setLaneTitle('');
     setShouldMarkAsComplete(false);
+    setShowLaneCount(true);
     onNewLane();
   };
 
@@ -69,6 +72,17 @@ export function LaneForm({
           }}
           onEscape={closeLaneForm}
           value={laneTitle}
+        />
+      </div>
+      <div className={c('checkbox-wrapper')}>
+        <div className={c('checkbox-label')}>
+          {t('Show Lane Count')}
+        </div>
+        <div
+          onClick={() => setShouldShowLaneCount(!shouldShowLaneCount)}
+          className={`checkbox-container ${
+            shouldShowLaneCount ? 'is-enabled' : ''
+          }`}
         />
       </div>
       <div className={c('checkbox-wrapper')}>

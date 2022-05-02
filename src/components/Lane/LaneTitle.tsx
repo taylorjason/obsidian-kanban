@@ -89,7 +89,7 @@ export function LaneTitle({
           </>
         )}
       </div>
-      {!isEditing && <div className={c('lane-title-count')}>{itemCount}</div>}
+      {!isEditing && itemCount !== false ? null : <div className={c('lane-title-count')}>{itemCount}</div>}
     </>
   );
 }

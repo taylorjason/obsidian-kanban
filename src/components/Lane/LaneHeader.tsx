@@ -55,7 +55,7 @@ export const LaneHeader = React.memo(function LaneHeader({
         <LaneTitle
           isEditing={isEditing}
           setIsEditing={setIsEditing}
-          itemCount={lane.children.length}
+          itemCount={lane.data.showLaneCount == true ? lane.children.length : false}
           title={lane.data.title}
           onChange={(e) => {
             boardModifiers.updateLane(

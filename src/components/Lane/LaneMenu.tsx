@@ -103,6 +103,7 @@ export function useSettingsMenu({ setIsEditing, path }: UseSettingsMenuParams) {
               data: {
                 title: '',
                 shouldMarkItemsComplete: false,
+                showLaneCount: true,
                 forceEditMode: true,
               },
             })
@@ -123,6 +124,7 @@ export function useSettingsMenu({ setIsEditing, path }: UseSettingsMenuParams) {
               data: {
                 title: '',
                 shouldMarkItemsComplete: false,
+                showLaneCount: true,
                 forceEditMode: true,
               },
             });

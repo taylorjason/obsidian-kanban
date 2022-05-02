@@ -6,6 +6,7 @@ import { KanbanSettings } from 'src/Settings';
 
 export interface LaneData {
   shouldMarkItemsComplete?: boolean;
+  showLaneCount?: boolean;
   title: string;
   dom?: HTMLDivElement;
   forceEditMode?: boolean;
